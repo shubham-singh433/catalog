@@ -1,0 +1,47 @@
+<div *ngIf="loading === true; then Products; else loader"></div>
+<ng-template #Products>
+  <div
+    style="
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-content: space-between;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+
+    <div *ngFor="let slide of data ">
+      <div
+        class="card"
+        style="
+          width: 25rem;
+          height: 35rem;
+          margin: 10px;
+          border: 2px solid black;
+          border-radius: 10px;
+        "
+      >
+          <img
+            class="card-img-top"
+            [src]="slide.image"
+            alt="Card image cap"
+            height="400"
+            width="20"
+          />
+          <div class="card-body">
+            <p class="card-text" style="text-align: center">
+              {{ slide.title | titlecase }}
+            </p>
+            <p class="card-text" style="text-align: center">
+              {{ slide.price | currency : "INR" }}
+            </p>
+          </div> 
+    
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #loader>
+  <!-- <app-loader [data]="data"></app-loader> -->
+</ng-template>
