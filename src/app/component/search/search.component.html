@@ -1,16 +1,9 @@
 <div *ngIf="loading === false; then Products; else loader"></div>
 <ng-template #Products>
-    <mat-paginator [length]=length
-              [pageSize]=items
-              [pageSizeOptions]="[5, 8, 10, 20]"
-              aria-label="Select page"
-           (page)="handlePageEvent($event)">
-</mat-paginator>
   <div
     class="conatiner"
   >
-
-    <div *ngFor="let slide of data | paginate: { itemsPerPage: items, currentPage: page }">
+    <div *ngFor="let slide of data|search:searchValue">
       <div
         class="card"
       >
@@ -38,6 +31,3 @@
 <ng-template #loader>
   <!-- <app-loader [data]="data"></app-loader> -->
 </ng-template>
-<div class="pagination">
-  <pagination-controls   class="my-pagination" (pageChange)="page = $event"></pagination-controls>
-</div>

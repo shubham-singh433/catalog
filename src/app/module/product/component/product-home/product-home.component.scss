@@ -1,0 +1,44 @@
+.img{
+    margin-top: 30px;
+}
+.details{
+    border: 1px solid gray;
+        border-radius: 10px;
+        margin-top: 30px;
+        box-shadow: 10px 10px 10px rgb(198, 205, 208);
+}
+.title{
+    text-align: left;
+        color: rgb(38, 68, 68);
+}
+.desc{
+    text-align: left;
+}
+.price{
+    color: green;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        text-align: left;
+}
+.review{
+    text-align: left;
+}
+.buy{
+background-color: rgb(92, 92, 215);
+    color: white;
+    margin: 20px;
+}
+.add{
+background-color: rgb(233, 145, 87);
+    color: white;
+    margin: 20px;
+}
+.back{
+    margin: 30px;
+    background-color: white;
+    width: 40px;
+    border: 0;
+}
+.link{
+    color: black;
+}

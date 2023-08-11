@@ -1,21 +1,8 @@
-<app-navbar></app-navbar>
-<div style="display: flex;justify-content: center;align-content: center;align-self: center;overflow: hidden;border: 2px solid white;padding: 4px;">
-  <c-carousel [animate]="true" transition="crossfade">
- 
-  <c-carousel-inner>
-    <c-carousel-item *ngFor="let slide of car_Image">
-      <img
-        [src]="slide.src"
-        alt="{{ slide.title }}"
-        class="d-block"
-        width="1400"
-        height="500"
-        loading="lazy" />
-    </c-carousel-item>
-  </c-carousel-inner>
-  <c-carousel-control [routerLink] caption="Previous" direction="prev" ></c-carousel-control>
-  <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
-</c-carousel>
-</div>
 
-<app-home></app-home>
+<app-navbar></app-navbar>
+<!-- carsosel image -->
+
+<router-outlet></router-outlet>
+<!-- home component
+<app-home></app-home> -->
+

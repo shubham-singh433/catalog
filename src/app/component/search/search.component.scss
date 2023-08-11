@@ -1,0 +1,25 @@
+.conatiner {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 25rem;
+    height: 35rem;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.card-text {
+    text-align: center
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+}

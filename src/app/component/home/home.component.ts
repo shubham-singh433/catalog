@@ -8,6 +8,24 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  car_Image: any[] = [
+    {
+      id: 1,
+      src: '../assets/p1.png',
+    },
+    {
+      id: 2,
+      src: '../assets/p2.png',
+    },
+    {
+      id: 3,
+      src: '../assets/p3.png',
+    },
+    {
+      id: 4,
+      src: '../assets/p4.png',
+    },
+  ];
   selectedValue: string = 'all';
   data!: any;
   subs!: Subscription;
@@ -15,16 +33,15 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(private Httpdata: ServicesService) {}
 
   ngOnInit() {
-    setInterval(() => {
-      this.subs = this.Httpdata.getData().subscribe((response) => {
-        console.log('response received');
-        this.data = response;
-      });
+    this.subs = this.Httpdata.getData().subscribe((response) => {
+      // console.log('response received');
+      this.data = response;
+      setTimeout(()=>{
+          this.loading = false;
+      },1000)
+    });
 
-      if (this.data.length > 0)
-      { this.loading = false;
-      }
-    }, 1000);
+   
   }
   ngOnDestroy(): void {
     this.subs.unsubscribe();

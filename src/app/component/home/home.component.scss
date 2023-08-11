@@ -1,0 +1,31 @@
+.outer-container{
+    display: flex;
+        justify-content: center;
+        align-content: center;
+        align-self: center;
+        overflow: hidden;
+        border: 2px solid white;
+        padding: 4px;
+}
+.select{
+    align-content: flex-start;
+        padding-left: 26px
+}
+.container{
+    display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: space-between;
+        justify-content: center;
+        align-items: center;
+}
+.card{
+    width: 25rem;
+        height: 32rem;
+        margin: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+}
+.card-text{
+    text-align: center
+}
