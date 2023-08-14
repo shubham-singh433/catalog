@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ServicesService } from '../../services.service';
+import { DataService } from '../../service/data.service';
 
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
@@ -16,16 +16,16 @@ export class SearchComponent {
   subs!: Subscription;
   loading: boolean = true;
 
-  constructor(private Httpdata: ServicesService,private routes:ActivatedRoute) {}
+  constructor(private Httpdata: DataService, private routes: ActivatedRoute) {}
 
   ngOnInit() {
-      this.subs = this.Httpdata.getData().subscribe((response) => {
-        this.data = response;
-        this.loading = false;
-      });
-    this.routes.queryParams.subscribe(params=>{
-      this.searchValue=params['keyword']
-    })
-  
+    this.subs = this.Httpdata.getData().subscribe((response) => {
+      this.data = response;
+      this.loading = false;
+    });
+    this.routes.queryParams.subscribe((params) => {
+      this.searchValue = params['keyword'];
+    });
+    console.log("running from search")
   }
 }

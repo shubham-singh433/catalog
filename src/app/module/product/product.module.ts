@@ -16,6 +16,8 @@ import { AppModule } from '../../app.module';
 import { ProductHomeComponent } from './component/product-home/product-home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { SearchComponent } from '../product/component/search/search.component';
+import { SearchPipe } from './pipes/search.pipe';
 const routes: Routes = [
   {
     path: 'product-home/:id',
@@ -27,8 +29,10 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     FilterPipe,
+    SearchPipe,
     ProductComponent,
     ProductHomeComponent,
+    SearchComponent,
   ],
   imports: [
     RouterModule.forChild(routes),

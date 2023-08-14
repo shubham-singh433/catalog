@@ -15,14 +15,14 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { HomeComponent } from './component/home/home.component';
 //services 
 import { MessageService } from './service/message.service';
-import { ServicesService } from './services.service';//create a user default service
+import { ServicesService } from './service/services.service';//create a user default service
 import {HttpClientModule} from '@angular/common/http';
 import { SearchPipe } from './pipes/search.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { LoaderComponent } from './component/loader/loader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { SearchComponent } from './component/search/search.component';
+// import { SearchComponent } from './module/product/component/search/search.component';
 
  //importing a service
 
@@ -34,7 +34,7 @@ import { SearchComponent } from './component/search/search.component';
     SearchPipe,
     FilterPipe,
     LoaderComponent,
-    SearchComponent,
+    // SearchComponent,
   ],
   imports: [
     BrowserModule,
