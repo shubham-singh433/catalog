@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
     //  this.msg.changeMessage.subscribe((message: string)=>this.message=message)
   }
   calling(): void {
-     this.router.navigate(['/search'], {
+     this.router.navigate(['/product-search'], {
        queryParams: { keyword: this.search.value },
      });
   }

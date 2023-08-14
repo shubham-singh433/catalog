@@ -13,7 +13,7 @@
     <div class="col img">
       <img
             class="card-img-top"
-            [src]="data.image"
+            [src]="data?.image"
             alt="Card image cap"
             height="600"
             width="20"
@@ -21,20 +21,20 @@
     </div>
     <div class="col details">
       <br>
-    <h4>{{data.title|titlecase}}</h4>
+    <h4>{{data?.title|titlecase}}</h4>
     <br>
-    <p  class="title">{{data.category|titlecase}}</p>
-      <p  class="desc" >{{data.description}}</p>
+    <p  class="title">{{data?.category|titlecase}}</p>
+      <p  class="desc" >{{data?.description}}</p>
       <p class="price"  >
-        {{data.price|currency:'INR'}}
+        {{data?.price|currency:'INR'}}
       </p>
-      <p class="review" >Total Review : {{data.rating.count}}</p>
+      <p class="review" >Total Review : {{data?.rating.count}}</p>
         <button mat-raised-button class="buy" style="background-color: rgb(92, 92, 215);
     color: white;
     margin: 20px;">Buy Now</button>
            <button mat-raised-button  class="add" style="background-color: rgb(233, 145, 87);
     color: white;
-    margin: 20px;" >Add To Cart</button>
+    margin: 20px;"  (click)="showSuccess()">Add To Cart</button>
     </div>
     </div>
     </div>

@@ -8,7 +8,10 @@ export class SearchPipe implements PipeTransform {
   transform(value: any, check: string) {
     if (check) {
       this.searchResults = value.filter((item: { title: string; }) =>
-        item.title.toLowerCase().includes(check.toLowerCase())
+      {
+        return item.title.toLowerCase().includes(check.toLowerCase());
+      }
+        
       );
       console.log(this.searchResults);
       return this.searchResults;

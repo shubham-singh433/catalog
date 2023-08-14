@@ -16,8 +16,11 @@ import { AppModule } from '../../app.module';
 import { ProductHomeComponent } from './component/product-home/product-home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { SearchComponent } from '../product/component/search/search.component';
+import { ProductSearchComponent } from './component/product-search/search.component';
 import { SearchPipe } from './pipes/search.pipe';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 const routes: Routes = [
   {
     path: 'product-home/:id',
@@ -32,9 +35,10 @@ const routes: Routes = [
     SearchPipe,
     ProductComponent,
     ProductHomeComponent,
-    SearchComponent,
+    ProductSearchComponent,
   ],
   imports: [
+
     RouterModule.forChild(routes),
     CommonModule,
     HttpClientModule,

@@ -22,6 +22,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { LoaderComponent } from './component/loader/loader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ToastrModule } from 'ngx-toastr';
 // import { SearchComponent } from './module/product/component/search/search.component';
 
  //importing a service
@@ -37,7 +38,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     // SearchComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     CarouselModule,
@@ -47,6 +48,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserAnimationsModule,
     FontAwesomeModule,
     MatAutocompleteModule,
+
+    ToastrModule.forRoot(),
   ],
   providers: [ServicesService, MessageService],
   bootstrap: [AppComponent],

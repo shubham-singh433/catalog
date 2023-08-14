@@ -3,17 +3,23 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import{faArrowLeft} from '@fortawesome/free-solid-svg-icons'
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-product-home',
   templateUrl: './product-home.component.html',
   styleUrls: ['./product-home.component.scss'],
 })
 export class ProductHomeComponent implements OnInit, OnDestroy {
-  arrow = faArrowLeft;;
+  arrow = faArrowLeft;
   data!: any;
   sub!: Subscription;
   productId!: number;
-  constructor(private http: HttpClient, private route: ActivatedRoute) {}
+  constructor(
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private toastr: ToastrService
+  ) {}
   ngOnInit(): void {
     const productId = this.route.snapshot.params['id'];
     this.sub = this.http
@@ -25,5 +31,9 @@ export class ProductHomeComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(): void {
     this.sub.unsubscribe();
+  }
+  showSuccess() {
+    this.toastr.success('Added Successfully','success',{timeOut:1000});
+    // alert('item added successfully');
   }
 }

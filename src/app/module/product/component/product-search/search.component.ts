@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
 })
-export class SearchComponent {
+export class ProductSearchComponent {
   searchValue!: string;
   data!: any;
   subs!: Subscription;
@@ -26,6 +26,5 @@ export class SearchComponent {
     this.routes.queryParams.subscribe((params) => {
       this.searchValue = params['keyword'];
     });
-    console.log("running from search")
   }
 }
